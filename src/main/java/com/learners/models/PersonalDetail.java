@@ -7,9 +7,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -25,6 +29,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "personal_detail")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class PersonalDetail implements Serializable{
 	/**
@@ -34,7 +39,6 @@ public class PersonalDetail implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
 	private Long id;
 	
 	@NotNull
@@ -69,5 +73,9 @@ public class PersonalDetail implements Serializable{
 	@Column(name="mobile_number",length = 100)
 	@Pattern(regexp = "^[0-9]*$")
 	private String mobileNumber;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="nic")
+	private User user;
 	
 }
