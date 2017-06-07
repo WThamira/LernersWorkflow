@@ -1087,3 +1087,7 @@ List of constraint violations:[
 2017-06-07 01:03:16.632  INFO 1758 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.14
 2017-06-07 01:03:16.643  INFO 1758 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2017-06-07 01:03:17.969  INFO 1758 --- [restartedMain] c.l.LearnersManagementSystemApplication  : Started LearnersManagementSystemApplication in 3.141 seconds (JVM running for 762.532)
+2017-06-07 22:47:06.236  INFO 2022 --- [main] LearnersManagementSystemApplicationTests : Starting LearnersManagementSystemApplicationTests on Thamiras-MacBook-Pro.local with PID 2022 (started by thamira in /Users/thamira/ProjectFolder/SpringDataTest/LearnersManagementSystem)
+2017-06-07 22:47:06.240  INFO 2022 --- [main] LearnersManagementSystemApplicationTests : No active profile set, falling back to default profiles: default
+2017-06-07 22:50:40.956  INFO 2109 --- [main] LearnersManagementSystemApplicationTests : Starting LearnersManagementSystemApplicationTests on Thamiras-MacBook-Pro.local with PID 2109 (started by thamira in /Users/thamira/ProjectFolder/SpringDataTest/LearnersManagementSystem)
+2017-06-07 22:50:40.959  INFO 2109 --- [main] LearnersManagementSystemApplicationTests : No active profile set, falling back to default profiles: default
