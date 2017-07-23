@@ -27,14 +27,16 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
+		
+//		http.authorizeRequests().antMatchers("/**").permitAll();
 
-		http.authorizeRequests().antMatchers("/api/**").authenticated().antMatchers("/api/oauth/**").permitAll();
+		http.authorizeRequests().antMatchers("/**").permitAll().antMatchers("/oauth/**").permitAll();
 
 		http.exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).and().logout()
-				.logoutUrl("/api/logout").logoutSuccessHandler(ajaxLogoutSuccessHandler).and().csrf().disable()
+				.logoutUrl("/logout").logoutSuccessHandler(ajaxLogoutSuccessHandler).and().csrf().disable()
 				.headers().frameOptions().disable().and().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**")
-				.permitAll().antMatchers("/health/**").permitAll().antMatchers("/api/register").permitAll()
-				.antMatchers("/api/logs/**").hasAnyAuthority(AuthoritiesConstants.ADMIN)
+				.permitAll().antMatchers("/health/**").permitAll().antMatchers("/register").permitAll()
+				.antMatchers("/logs/**").hasAnyAuthority(AuthoritiesConstants.ADMIN)
 				.antMatchers("/websocket/tracker").hasAuthority(AuthoritiesConstants.ADMIN).antMatchers("/websocket/**")
 				.permitAll().antMatchers("/metrics/**").hasAuthority(AuthoritiesConstants.ADMIN)
 				.antMatchers("/trace/**").hasAuthority(AuthoritiesConstants.ADMIN).antMatchers("/dump/**")
@@ -48,6 +50,6 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 				.hasAuthority(AuthoritiesConstants.ADMIN).antMatchers("/liquibase/**")
 				.hasAuthority(AuthoritiesConstants.ADMIN).antMatchers("/api-docs/**")
 				.hasAuthority(AuthoritiesConstants.ADMIN).antMatchers("/protected/**").authenticated();
-
+		
 	}
 }// End ResourceServerConfiguration ()

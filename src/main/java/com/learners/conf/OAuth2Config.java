@@ -43,7 +43,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
 
-    @Value("${default.redirect:http://localhost:5000/tonr2/sparklr/redirect}")
+    @Value("${default.redirect:http://localhost:8085/tonr2/sparklr/redirect}")
     private String defaultRedirectUri;
 
 

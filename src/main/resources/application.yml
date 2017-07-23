@@ -21,9 +21,9 @@ spring:
           use_query_cache: false
         generate_statistics: false
  
-
-logging:
-  level:
-    org.springframework: false
-    org.hibernate: ERROR
-  path: logs/prod/
+#
+#logging:
+#  level:
+#    org.springframework: false
+#    org.hibernate: ERROR
+#  path: logs/prod/

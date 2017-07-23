@@ -1,0 +1,31 @@
+{
+	"nic":"912082091V",
+	"address":"'Asiri',2nd mile post, Bogahamadiththa, Haliela",
+	"birthday":"1991-7-26",
+	"bloodGroup":"OP",
+	"fullName":"Wasala Mudiyanselage Nindara Kumbure Gedara Thamira Lakmal Weerakoon",
+	"shortName":"Thamira Lakmal",
+	"gender":"MALE",
+	"height":168,
+	"weight":51,
+		"mobileNumber":"0714456755"
+	
+}
+
+{
+"userName":"thamira",
+"password":"thamira",
+"email":"thamira1005@gmail.com",
+"roles":["http://localhost:8085/roles/1","http://localhost:8085/roles/2"]
+}
+
+{
+"registerDate":"2017-7-21",
+"registrationNumber":"AS12345",
+"oldDrivingLicenceNumber":"B967282",
+"oldLicenceIssuedate":"2011-8-12",
+"ntmiDate":"2011-3-3",
+"ntmiNumber":"As12121",
+"pdetails":"http://localhost:8085/personalDetails/912082091V"
+
+}

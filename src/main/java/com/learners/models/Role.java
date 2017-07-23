@@ -11,9 +11,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
+@RequiredArgsConstructor
 public class Role  implements Serializable{
 
 	/**
@@ -29,5 +31,6 @@ public class Role  implements Serializable{
 	@Size(min = 0, max = 50)
 	@Column(length = 50, unique = true)
 	private String name;
+	
 
 }
