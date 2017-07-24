@@ -23,11 +23,15 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "user")
+@RequiredArgsConstructor
+@AllArgsConstructor
 public class User implements Serializable {
 
 	/**

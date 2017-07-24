@@ -17,8 +17,8 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "complete_lecture")
-public class CompleteLecture implements Serializable{
-	
+public class CompleteLecture implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -26,17 +26,16 @@ public class CompleteLecture implements Serializable{
 
 	@Id
 	@ManyToOne
-    @JoinColumn(name = "lessons_id")
+	@JoinColumn(name = "lessons_id")
 	private LessonsList lessonList;
-	
+
 	@Id
 	@ManyToOne
-    @JoinColumn(name = "registration_detail_id")
+	@JoinColumn(name = "registration_detail_id")
 	private RegistrationDetail regDetails;
-	
+
 	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date date;
-	
-	
+
 }

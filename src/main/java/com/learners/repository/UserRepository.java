@@ -2,13 +2,18 @@ package com.learners.repository;
 
 import java.util.Optional;
 
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.security.access.prepost.PreAuthorize;
 
+import com.learners.models.QUser;
 import com.learners.models.User;
 
-public interface UserRepository extends PagingAndSortingRepository<User, Long> {
+
+
+public interface UserRepository extends PagingAndSortingRepository<User, Long>,QueryDslPredicateExecutor<User>,QuerydslBinderCustomizer<QUser> {
 
 	User findFirstByUserName(@Param("userName") String userName);
 
