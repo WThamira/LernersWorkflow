@@ -30,7 +30,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 		
 //		http.authorizeRequests().antMatchers("/**").permitAll();
 
-		http.authorizeRequests().antMatchers("/**").permitAll().antMatchers("/oauth/**").permitAll();
+		http.authorizeRequests().antMatchers("/**").authenticated().antMatchers("/oauth/**").permitAll();
 
 		http.exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).and().logout()
 				.logoutUrl("/logout").logoutSuccessHandler(ajaxLogoutSuccessHandler).and().csrf().disable()
