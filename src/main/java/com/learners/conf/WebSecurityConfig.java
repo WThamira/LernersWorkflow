@@ -37,6 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
+		
 		web.ignoring().antMatchers("/scripts/**/*.{js,html}").antMatchers("/bower_components/**")
 				.antMatchers("/i18n/**").antMatchers("/assets/**").antMatchers("/swagger-ui/index.html")
 				.antMatchers("/api/register").antMatchers("/api/activate")

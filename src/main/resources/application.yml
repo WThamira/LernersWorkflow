@@ -2,7 +2,7 @@ server:
   port: 8090
 spring:
   main:
-    banner-mode: "off"
+    banner-mode: 'off'
   datasource:
     url: jdbc:mysql://localhost:3306/LearnersManagementSystem?useSSL=false
     username: root
@@ -23,10 +23,5 @@ spring:
   data:
     rest:
       base-path: /api/
- 
-#
-#logging:
-#  level:
-#    org.springframework: false
-#    org.hibernate: ERROR
-#  path: logs/prod/
+      
+spring.mobile.devicedelegatingviewresolver.enabled: true

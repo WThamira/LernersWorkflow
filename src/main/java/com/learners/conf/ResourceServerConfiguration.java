@@ -1,6 +1,7 @@
 package com.learners.conf;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -30,7 +31,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 		
 //		http.authorizeRequests().antMatchers("/**").permitAll();
 
-		http.authorizeRequests().antMatchers("/**").authenticated().antMatchers("/oauth/**").permitAll();
+		 http.authorizeRequests().antMatchers("/api/**").authenticated().antMatchers("/api/oauth/**").permitAll();
 
 		http.exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).and().logout()
 				.logoutUrl("/logout").logoutSuccessHandler(ajaxLogoutSuccessHandler).and().csrf().disable()
