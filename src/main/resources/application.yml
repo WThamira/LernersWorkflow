@@ -1,12 +1,42 @@
+spring:
+  profiles.active: default
+  
+---
 server:
   port: ${PORT:8090}
 spring:
+  profiles: default
   main:
     banner-mode: 'off'
   datasource:
-    url: ${JDBC_DATABASE_URL:jdbc:mysql://localhost:3306/LearnersManagementSystem?useSSL=false}
-    username: ${JDBC_DATABASE_USERNAME:root}
-    password: ${JDBC_DATABASE_PASSWORD:root}
+    url: jdbc:h2:./database/samspledb;AUTO_SERVER=TRUE
+    validation-query: SELECT 1
+    test-on-borrow: true
+  jpa:
+    show_sql: false
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5
+    properties:
+      hibernate:
+        cache:
+          use_second_level_cache: false
+          use_query_cache: false
+        generate_statistics: false
+  data:
+    rest:
+      base-path: /api/
+      
+spring.mobile.devicedelegatingviewresolver.enabled: true
+---
+server:
+  port: 8090
+spring:
+  profiles: docker
+  main:
+    banner-mode: 'off'
+  datasource:
+    url: jdbc:h2:./database/samspledb;AUTO_SERVER=TRUE
     validation-query: SELECT 1
     test-on-borrow: true
   jpa:

@@ -1,0 +1,18 @@
+version: '2'
+services:
+  lms-service:
+    image : lms/lms-service
+    restart: always
+    environment:
+    - SPRING_PROFILES_ACTIVE=docker
+    ports: 
+    - 8090:8090
+#  lmsystem-service:
+#    image: mysql:5.7
+#    ports:
+#    - 3306:3306
+#    environment:
+#    - MYSQL_ROOT_PASSWORD=root
+#    - MYSQL_DATABASE=LearnersManagementSystem
+#    logging: 
+#      driver: none
