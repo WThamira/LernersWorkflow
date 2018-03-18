@@ -17,6 +17,7 @@ public enum LessonType {
 
 	@Override
 	public String toString() {
-		return this.value.toString();
+		String values=value.get(0)+" ~ "+value.get(1);
+		return values;
 	}
 }
