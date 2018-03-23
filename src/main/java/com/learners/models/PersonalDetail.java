@@ -77,6 +77,7 @@ public class PersonalDetail implements Serializable{
 	
 	@OneToMany(mappedBy="pdetails",fetch = FetchType.LAZY)
 	private Set<RegistrationDetail>  registrationDetail;
+
 	
 
 }
